@@ -13,11 +13,11 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     let operation = req.body.operation_type
     let ans = 0
-    if (operation === 'addition') {
+    if (operation === 'addition' || operation.includes("add") || operation.includes("plus")) {
         ans = req.body.x + req.body.y
-    } else if (operation === 'subtraction') {
+    } else if (operation === 'subtraction' || operation.includes("sub") || operation.includes("minus")) {
         ans = req.body.x - req.body.y
-    } else if (operation === 'multiplication') {
+    } else if (operation === 'multiplication' || operation.includes("mult") || operation.includes("prod")) {
         ans = req.body.x * req.body.y
     }
     return res.json({
